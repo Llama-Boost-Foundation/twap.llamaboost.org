@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinGecko TWAP Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CoinGecko TWAP Calculator</h1>
+        <form id="twapForm">
+            <div class="form-group">
+                <label for="coinId">Coin:</label>
+                <div class="select-container">
+                    <input type="text" id="coinSearch" name="coinSearch" placeholder="Search by name, symbol or ID...">
+                    <div id="coinDropdown" class="dropdown-content hidden"></div>
+                </div>
+                <input type="hidden" id="coinId" name="coinId" required>
+                <div id="selectedCoin" class="selected-coin hidden">
+                    <span id="selectedCoinName"></span>
+                    <span id="selectedCoinSymbol"></span>
+                    <button type="button" id="clearCoin" class="clear-btn">×</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="days">Number of Days (1-60):</label>
+                <input type="number" id="days" name="days" min="1" max="60" required value="7">
+            </div>
+            <div class="button-container">
+                <button type="submit" class="small-button">Calculate TWAP</button>
+            </div>
+        </form>
+        <div id="loading" class="hidden">Loading data...</div>
+        <div id="error" class="hidden"></div>
+        <div id="results" class="hidden">
+            <h2>TWAP Results</h2>
+            <div id="chart"></div>
+            
+            <h3>Daily Average Prices</h3>
+            <div id="dailyChart"></div>
+            
+            <table id="twapTable">
+                <thead>
+                    <tr>
+                        <th>Days</th>
+                        <th>TWAP Price (USD)</th>
+                        <th>% Change</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="data/coins-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

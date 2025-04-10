@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+h2 {
+    margin: 1.5rem 0;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.select-container {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 0.75rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f7fa;
+}
+
+.dropdown-item .symbol {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.dropdown-item .name {
+    color: #555;
+}
+
+.dropdown-item .id {
+    color: #888;
+    font-size: 0.8rem;
+    margin-left: 8px;
+}
+
+.dropdown-item .rank {
+    float: right;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.selected-coin {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #f1f7fe;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.selected-coin span {
+    margin-right: 10px;
+}
+
+#selectedCoinName {
+    font-weight: 600;
+}
+
+#selectedCoinSymbol {
+    color: #555;
+    background-color: #e4e9f0;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+}
+
+.clear-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.3rem;
+    line-height: 1;
+}
+
+.clear-btn:hover {
+    color: #e74c3c;
+    background: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.small-button {
+    width: auto;
+    min-width: 150px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    text-align: center;
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+#error {
+    color: #e74c3c;
+    padding: 1rem;
+    border: 1px solid #e74c3c;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+#chart, #dailyChart {
+    height: 400px;
+    margin: 2rem 0 3.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+h3 {
+    margin: 2rem 0 1rem;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.daily-chart-bar {
+    display: inline-block;
+    background-color: #74b9ff;
+    margin: 0 3px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f1f4f8;
+}
+
+.chart-bar {
+    display: inline-block;
+    background-color: #3498db;
+    margin: 0 3px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+}
+
+.chart-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    #chart {
+        height: 200px;
+    }
+}
