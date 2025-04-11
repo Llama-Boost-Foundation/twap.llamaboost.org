@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Calculate TWAP with coingecko data",
   "main": "server.js",
-  "author": "0xdef1.eth@gmail.com",
+  "author": "llama@llamaboost.org",
   "license": "MIT",
   "bin": {
     "coingecko-twap": "./src/index.js"

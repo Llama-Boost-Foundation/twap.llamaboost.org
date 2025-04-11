@@ -34,12 +34,13 @@
         <div id="loading" class="hidden">Loading data...</div>
         <div id="error" class="hidden"></div>
         <div id="results" class="hidden">
-            <h2>TWAP Results</h2>
+            <h2 id="twapDateHeading">TWAP on</h2>
             <div id="chart"></div>
             
             <h3>Daily Average Prices</h3>
             <div id="dailyChart"></div>
             
+            <h3 id="tableDateHeading"></h3>
             <table id="twapTable">
                 <thead>
                     <tr>
@@ -51,6 +52,7 @@
                 <tbody></tbody>
             </table>
         </div>
+        <div id="footer">2025 - <a href="https://llamaboost.org">Llama Boost Foundation</a></div>
     </div>
     <script src="data/coins-data.js"></script>
     <script src="app.js"></script>

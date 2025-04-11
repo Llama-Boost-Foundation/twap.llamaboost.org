@@ -253,6 +253,21 @@ document.addEventListener('DOMContentLoaded', () => {
         hideLoading();
         resultsEl.classList.remove('hidden');
         
+        // Update the heading with current dateformat "Friday, 11. April 2025"
+        const twapDateHeading = document.getElementById('twapDateHeading');
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString('en-US', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        }).replace(/(\d+)(?=\s\w+\s\d+)/, '$1.');
+        twapDateHeading.textContent = `TWAP on ${formattedDate}`;
+        
+        // Also update the table heading with the date
+        const tableDateHeading = document.getElementById('tableDateHeading');
+        tableDateHeading.textContent = `TWAP Table for ${formattedDate}`;
+        
         // Clear previous results
         chartEl.innerHTML = '';
         dailyChartEl.innerHTML = '';
